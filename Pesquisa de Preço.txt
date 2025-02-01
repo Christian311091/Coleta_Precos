@@ -1,0 +1,10 @@
+URL ONDE PESQUISAS OS PREÇOS DOS IPADS
+
+MERCADO LIVE = "https://www.mercadolivre.com.br/apple-ipad-wifi-9th-geraco-cinza-espacial-a2602-64gb-102-/p/MLB18498456#polycard_client=search-nordic&searchVariation=MLB18498456&wid=MLB3885830665&position=2&search_layout=grid&type=product&tracking_id=50f46c24-a885-45c1-af4e-0565fdb5d209&sid=search"
+
+MAGAZINE LUIZA - "https://www.magazineluiza.com.br/tablet-ipad9-geracao-mk2k3ll-a-wi-fi-64gb-tela-de-10-2-cor-cinza-bivolt-taqita-taemcasa/p/kccke69d1j/tb/tbtm/?&seller_id=taquitaemcasa&utm_source=google&utm_medium=cpc&utm_term=76956&utm_campaign=google_eco_per_ven_pla_tc_sor_3p_ea-ga-tb-wea-b&utm_content=&partner_id=76956&gclsrc=aw.ds&gad_source=4&gclid=CjwKCAiAqfe8BhBwEiwAsne6gUXeghVpJIKlY8nlwhOwBo0i8XoVItMv6Rq0lilKZcDJ4DMX3z8vOhoC8s0QAvD_BwE"
+
+CARREFOUR - "https://www.carrefour.com.br/apple-ipad-9a-geracao-10-2-wi-fi-64gb-prata-mk2l3ll-a-mp923377496/p?utm_medium=sem&utm_source=google_pmax_3p&utm_campaign=3p_performancemax_todos_os_produtos&gad_source=4&gclid=CjwKCAiAqfe8BhBwEiwAsne6gcnUwjqRTWMhv49F9fnxDchgn_EbzUWpn1QQDIiK33qPY9p5NXT9vBoC-NcQAvD_BwE"
+
+
+<span class="andes-money-amount__fraction" aria-hidden="true">2.099</span>
