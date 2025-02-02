@@ -7,4 +7,9 @@ MAGAZINE LUIZA - "https://www.magazineluiza.com.br/tablet-ipad9-geracao-mk2k3ll-
 CARREFOUR - "https://www.carrefour.com.br/apple-ipad-9a-geracao-10-2-wi-fi-64gb-prata-mk2l3ll-a-mp923377496/p?utm_medium=sem&utm_source=google_pmax_3p&utm_campaign=3p_performancemax_todos_os_produtos&gad_source=4&gclid=CjwKCAiAqfe8BhBwEiwAsne6gcnUwjqRTWMhv49F9fnxDchgn_EbzUWpn1QQDIiK33qPY9p5NXT9vBoC-NcQAvD_BwE"
 
 
-<span class="andes-money-amount__fraction" aria-hidden="true">2.099</span>
+CLASSE NO BUSCAPÉ:
+
+class="ProductCard_ProductCard_Inner__gapsh"
+
+class="ProductCard_ProductCard_Tags___N1Ll ProductCard_ProductCard_SuperiorTags__bKsrh"
+
