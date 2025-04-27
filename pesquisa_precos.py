@@ -2,6 +2,7 @@ import requests
 from lxml import html
 import csv
 from datetime import datetime
+import os
 
 # URLs das páginas de busca do Buscapé
 urls = {
@@ -14,35 +15,39 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
 }
 
-# Obter a data e hora atual
-data_hora_atual = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+# Pasta de dados
+os.makedirs("dados", exist_ok=True)
+
+# Nome do arquivo baseado na data
+data_atual = datetime.now().strftime("%Y-%m-%d")
+nome_arquivo = f"dados/buscape_{data_atual}.csv"
 
 # Abrir o arquivo CSV para escrita
-with open("buscape_resultados.csv", "w", newline="", encoding="utf-8") as arquivo:
+with open(nome_arquivo, "w", newline="", encoding="utf-8-sig") as arquivo:
     escritor = csv.writer(arquivo, delimiter=";")
-    escritor.writerow(["Data e Hora", "Produto", "Nome", "Preço", "Link"])  # Cabeçalho
+    escritor.writerow(["Data", "Produto", "Nome", "Preço", "Link"])  # Cabeçalho
 
-    # Iterar sobre as URLs
     for produto, url in urls.items():
-        response = requests.get(url, headers=headers)
-        
-        if response.status_code == 200:
+        try:
+            response = requests.get(url, headers=headers)
+            response.raise_for_status()
             tree = html.fromstring(response.content)
 
             # Capturar os nomes dos produtos
-            nomes = tree.xpath('//a[contains(@class, "ProductCard_ProductCard_Inner__gapsh")]//h2[@class="Text_Text__ARJdp Text_MobileLabelXs__dHwGG Text_DesktopLabelSAtLarge__wWsED ProductCard_ProductCard_Name__U_mUQ"]/text()')
+            nomes = tree.xpath('//a[contains(@class, "ProductCard_ProductCard_Inner__gapsh")]//h2/text()')
 
-            # Capturar os preços dos produtos
-            precos = tree.xpath('//a[contains(@class, "ProductCard_ProductCard_Inner__gapsh")]//p[@class="Text_Text__ARJdp Text_MobileHeadingS__HEz7L"]/text()')
+            # Capturar apenas os preços corretos
+            precos = tree.xpath('//p[contains(@class, "Text_MobileHeadingS__HEz7L")]/text()')
 
             # Capturar os links dos produtos
             links = tree.xpath('//a[contains(@class, "ProductCard_ProductCard_Inner__gapsh")]/@href')
             links_completos = ["https://www.buscape.com.br" + link for link in links]
 
-            # Escrever os dados no arquivo CSV
+            # Escrever os dados no arquivo
             for nome, preco, link in zip(nomes, precos, links_completos):
-                escritor.writerow([data_hora_atual, produto, nome.strip(), preco.strip(), link])
+                preco = preco.strip() if preco else "Preço não encontrado"
+                escritor.writerow([data_atual, produto, nome.strip(), preco, link])
 
             print(f"Dados do {produto} salvos com sucesso!")
-        else:
-            print(f"Erro ao acessar a página do {produto}: {response.status_code}")
+        except Exception as e:
+            print(f"Erro ao coletar dados de {produto}: {e}")
