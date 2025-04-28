@@ -1,2 +1,5 @@
 requests
 lxml
+lxml==4.9.3
+requests==2.31.0
+pandas==2.0.3

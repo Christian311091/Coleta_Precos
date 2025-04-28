@@ -16,6 +16,11 @@ jobs:
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
 
+    - name: Instalar dependências
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+    
     - name: Executar o script Python
       run: |
         python scraper.py
