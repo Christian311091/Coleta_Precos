@@ -24,7 +24,7 @@ jobs:
 
       - name: Executar o script
         run: |
-          python scraper.yml
+          python scraper.py
 
       - name: Subir os arquivos gerados
         run: |
