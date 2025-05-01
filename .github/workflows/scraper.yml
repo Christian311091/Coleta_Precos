@@ -8,27 +8,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout do código
-      uses: actions/checkout@v3
+      - name: Clonar repositório
+        uses: actions/checkout@v3
 
-    - name: Configurar Git
-      run: |
-        git config user.name "github-actions"
-        git config user.email "github-actions@github.com"
+      - name: Configurar Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
 
-    - name: Instalar dependências
-      run: |
-        pip install --upgrade pip
-        pip install -r requirements.txt
-    
-    - name: Executar o script Python
-      run: |
-        python scraper.py
+      - name: Instalar dependências
+        run: |
+          pip install -r requirements.txt
 
-    - name: Adicionar arquivos gerados ao commit
-      run: |
-        git add buscape_resultados.csv
-        git commit -m "Adicionando resultados coletados"
-        git push https://$GH_TOKEN@github.com/Christian311091/Coleta_Precos.git HEAD:main
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Executar script Python
+        run: |
+          python scraper.py
+
+      - name: Subir arquivos Gerados
+        run: |
+          git add buscape_resultados.csv
+          git commit -m "Adicionando resultados coletados"
+          git push https://$GH_TOKEN@github.com/Christian311091/Coleta_Precos.git HEAD:main
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
