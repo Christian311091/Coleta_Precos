@@ -28,6 +28,6 @@ jobs:
         run: |
           git add buscape_resultados.csv
           git commit -m "Adicionando resultados coletados"
-          git push https://$GH_TOKEN@github.com/Christian311091/Coleta_Precos.git HEAD:main
+          git push https://$PESQUISA_PRECO@github.com/Christian311091/Coleta_Precos.git HEAD:main
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          PESQUISA_PRECO: ${{ secrets.PESQUISA_PRECO }}
