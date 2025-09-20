@@ -40,16 +40,16 @@ O projeto possui duas versões principais:
 ## ▶️ Como Executar  
 
 1. Clone este repositório:  
-- git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
-- cd SEU-REPOSITORIO
+git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
+cd SEU-REPOSITORIO
 
 2. Crie e ative um ambiente virtual (opcional, mas recomendado):
-- python -m venv venv
-- source venv/bin/activate  # Linux/Mac
-- venv\Scripts\activate     # Windows
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
 
 3. Instale as dependências:
-- pip install -r requirements.txt
+pip install -r requirements.txt
 
 4. Execute o script:
-- python buscape_scraper.py
+python buscape_scraper.py
